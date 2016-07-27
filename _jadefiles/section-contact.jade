@@ -1,0 +1,32 @@
+a(name="contact")
+section.contact
+  .flex.flex--center
+  
+    .col-1.flex.flex--center
+      p.home-lead ...contact me...
+      form(action="https://formspree.io/maciej.caputa.pl@gmail.com", method="post")
+        div.input
+          span.label Name: 
+          input(type="text", name="name")
+        div.input
+          span.label Email: 
+          input(type="email", name="_replyto")
+        div.input
+            span.label Message:
+            .textarea 
+              textarea(name="message", cols="40", rows="5")
+        div.action
+          input(type="submit", value="Send")
+      
+    .col-1.flex.flex--center
+      p.home-lead ...or find me on...
+      .social-media
+        a(href="uk.linkedin.com/in/MaciejCaputa").social-media-button
+          i.ion-social-linkedin-outline
+          span LinkedIn
+        a(href="https://github.com/MaciejCaputa").social-media-button
+          i.ion-social-github-outline
+          span Github
+        a(href="http://codepen.io/MaciejCaputa/").social-media-button
+          i.ion-social-codepen-outline
+          span CodePen

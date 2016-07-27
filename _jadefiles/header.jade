@@ -1,0 +1,23 @@
+mixin nav-content()
+  ul
+    li: a(href="#about") About
+    li: a(href="#what-i-do") What I Do
+    li: a(href="#specialisation") Specialisation
+    li: a(href="#services") Services
+    li: a(href="#portfolio") Portfolio
+    li: a(href="#skills") Skills
+    li: a(href="#contact") Contact
+
+.mobile-nav
+  +nav-content()
+  
+header
+  .header-position
+    h1.logo Maciej Caputa
+
+    nav.site-nav
+      +nav-content()
+
+    a(href="mailto:maciej.caputa.pl@gmail.com").email-link +email me
+
+    .mobile-nav-toggle: span
