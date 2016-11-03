@@ -1,21 +1,26 @@
-.home-wrap
-	header
-		width: 135px
-		background: white
-		padding: 30px 0
+// --- Header ---
+.header
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	width: 100%
+	height: 4em
+	background: $grey-50
+	z-index: 10
+	box-shadow: $box-shadow
 
+	&__inner
+		display: flex
+		align-items: center
+		justify-content: space-between
+		width: 100%
+		height: 100%
+		max-width: 960px
+		padding: 0 1em
+		margin: 0 auto
 
-		.header-position
-			position: fixed
-			top: 30px
-			left: 0
-			bottom: 30px
-			width: 135px
-			display: flex
-			flex-direction: column
-			justify-content: space-between
-
-		.logo
+		&__logo
 			position: relative
 			z-index: 11
 			+hide-text
@@ -27,116 +32,20 @@
 				size: contain
 			height: 100px
 			padding: 0
-			margin: 0
+					margin: 0
 
-		.site-nav
-			ul
-				list-style: none
-				margin: 20px 0
-				padding: 0 20px 0 0
-				text-align: right
-
-				li
-					margin-bottom: 10px
-
-					&:last-child
-						margin-bottom: 0
-
-		.email-link
-			display: block
-			text-align: right
-			padding-right: 20px
+		&__links
+	    display: flex
+	    &__link
+	      line-height: 2.5em
+	      padding: 0 1em
+	      color: rgba(0,0,0,0.87)
 
 
-		.mobile-nav-toggle
-			z-index: 11
-			display: none
-			width: 50px
-			height: 50px
-			margin-right: 20px
-			align-items: center
-			cursor: pointer
+	      i
+	        color: rgba(0,0,0,0.87)
+	        padding-right: 6px
 
-
-			span,
-			span:before,
-			span:after
-				content: ""
-				display: block
-				height: 2px
-				width: 100%
-				background: #333
-				position: relative
-
-				transition: all 0.3s ease-in-out
-
-			span:before
-				top: 15px
-
-			span:after
-				top: -15px
-
-			&.is-open span
-				background: transparent
-
-			&.is-open span:before,
-			&.is-open span:after
-				transform: rotate(45deg)
-				top: 2px
-
-			&.is-open span:after
-				transform: rotate(-45deg)
-				top: 0
-
-
-	// Mobile Nav
-	.mobile-nav
-		z-index: 10
-		display: none
-		position: absolute
-		width: 100%
-		background: white
-		padding: 30px 0 20px
-		transform: translateY(-100%)
-		transition: all 0.3s ease-in-out
-
-		ul
-			list-style: none
-			margin: 0
-			padding: 0
-
-		li
-			text-align: center
-			margin-bottom: 10px
-
-
-
-@media (max-width: 775px)
-	.home-wrap
-		header
-			width: auto
-			padding: 20px 0
-
-			.header-position
-				width: auto
-				position: relative
-				top: auto
-				bottom: auto
-				left: auto
-				flex-direction: row
-				align-items: center
-
-			.site-nav,
-			.email-link
-				display: none
-
-			.logo
-				height: 60px
-
-			.mobile-nav-toggle
-				display: flex
-
-		// Mobile Nav
-		.mobile-nav.is-open
-			display: block
-			transform: translateY(0%)
+	      &:hover
+	        i, span
+	          color: rgba(0,0,0,0.54)

@@ -1,32 +1,41 @@
-a(name="contact")
-section.contact
-  .flex.flex--center
+a(name='contact')
+section.section.section--contact
+
+  .section__items
   
-    .col-1.flex.flex--center
-      p.home-lead ...contact me...
-      form(action="https://formspree.io/maciej.caputa.pl@gmail.com", method="post")
-        div.input
+    .section__items__item
+    
+      p.section__items__item__lead Contact me via this form
+      
+      form.section__items__item__form(action='https://formspree.io/maciej.caputa.pl@gmail.com', method='post')
+      
+        .section__items__item__form__input
           span.label Name: 
-          input(type="text", name="name")
-        div.input
+          input(type='text', name='name')
+          
+        .section__items__item__form__input
           span.label Email: 
-          input(type="email", name="_replyto")
-        div.input
+          input(type='email', name='_replyto')
+          
+        .section__items__item__form__input
             span.label Message:
             .textarea 
-              textarea(name="message", cols="40", rows="5")
-        div.action
-          input(type="submit", value="Send")
+              textarea(name='message', cols='40', rows='5')
+              
+        input.section__items__item__form__submit(type='submit', value='Send')
+
+
+    .section__items__item
+
+      p.section__items__item__lead or find me on...
       
-    .col-1.flex.flex--center
-      p.home-lead ...or find me on...
-      .social-media
-        a(href="uk.linkedin.com/in/MaciejCaputa").social-media-button
-          i.ion-social-linkedin-outline
-          span LinkedIn
-        a(href="https://github.com/MaciejCaputa").social-media-button
-          i.ion-social-github-outline
-          span Github
-        a(href="http://codepen.io/MaciejCaputa/").social-media-button
+      .section__items__item__social-media
+        a(href='http://codepen.io/MaciejCaputa/').section__items__item__social-media__button
           i.ion-social-codepen-outline
           span CodePen
+        a(href='https://github.com/MaciejCaputa').section__items__item__social-media__button
+          i.ion-social-github-outline
+          span Github
+        a(href='https://www.linkedin.com/in/maciejcaputa').section__items__item__social-media__button
+          i.ion-social-linkedin-outline
+          span LinkedIn

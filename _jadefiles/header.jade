@@ -1,23 +1,24 @@
-mixin nav-content()
-  ul
-    li: a(href="#about") About
-    li: a(href="#what-i-do") What I Do
-    li: a(href="#specialisation") Specialisation
-    li: a(href="#services") Services
-    li: a(href="#portfolio") Portfolio
-    li: a(href="#skills") Skills
-    li: a(href="#contact") Contact
+// --- Header ---
+header.header
 
-.mobile-nav
-  +nav-content()
+  .header__inner
   
-header
-  .header-position
-    h1.logo Maciej Caputa
+    h1.header__inner__logo Maciej Caputa
 
-    nav.site-nav
-      +nav-content()
-
-    a(href="mailto:maciej.caputa.pl@gmail.com").email-link +email me
-
-    .mobile-nav-toggle: span
+    .header__inner__links
+    
+      a.header__inner__links__link(href='http://codepen.io/MaciejCaputa/', target='_blank').social-media-button
+        i.ion-social-codepen-outline
+        span CodePen
+        
+      a.header__inner__links__link(href='https://github.com/MaciejCaputa', target='_blank').social-media-button
+        i.ion-social-github-outline
+        span GitGub
+        
+      a.header__inner__links__link(href='https://www.linkedin.com/in/maciejcaputa', target='_blank').social-media-button
+        i.ion-social-linkedin-outline
+        span LinkedIn
+        
+      a.header__inner__links__link(href='../assets/MACIEJ_CAPUTA_CV.pdf', target='_blank').download-cv
+        i.fa.fa-download
+        span CV
