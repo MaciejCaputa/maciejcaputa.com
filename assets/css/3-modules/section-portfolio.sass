@@ -1,16 +1,27 @@
-section.portfolio
-  text-align: center
-  font-weight: 300
-  color: white
-  background: #843365
+.section
+  &--portfolio
+    background: $purple-800
 
-  .title
-    font-size: 22px
 
-  .descripiton
-    font-size: 16px
-    text-align: justify
+    &__tiles
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-around
 
-  .tile
-    display: flex
-    flex-direction: column
+      &__tile
+
+        display: flex
+        flex-direction: column
+        margin: 0.5em auto 1.5em auto
+        flex-basis: 45%
+        @media(max-width: 768px)
+          flex-basis: 85%
+
+
+        &__title
+          font-size: 1.5em
+          text-align: center
+
+        &__description
+          font-size: 16px
+          text-align: justify
