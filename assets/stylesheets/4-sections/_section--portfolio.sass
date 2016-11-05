@@ -3,23 +3,28 @@
 .section
 
   &--portfolio
-    background: $purple-800
+    background: $cyan-800
 
     &__tiles
       display: flex
       flex-wrap: wrap
-      justify-content: space-around
+      justify-content: space-between
       max-width: $max-width
       width: 100%
       margin: 0 auto
+      @media(max-width: 768px)
+        justify-content: center
+        flex-basis: 90%
+
 
       &__tile
         display: flex
         flex-direction: column
-        margin: 0.5em auto 1.5em auto
-        flex-basis: 45%
+        margin: 0.5em 0 1.5em 0
+        flex-basis: 49%
         @media(max-width: 768px)
           flex-basis: 85%
+          margin-top: 1em
 
         &__title
           font-size: 1.5em
@@ -28,4 +33,4 @@
         &__description
           font-size: 16px
           text-align: justify
-          min-height: 4em
+          min-height: 8em
