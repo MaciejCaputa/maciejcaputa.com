@@ -1,23 +1,25 @@
+// --- Section Portfolio ---
+
 .section
-  
+
   &--portfolio
     background: $purple-800
-
 
     &__tiles
       display: flex
       flex-wrap: wrap
       justify-content: space-around
+      max-width: $max-width
+      width: 100%
+      margin: 0 auto
 
       &__tile
-
         display: flex
         flex-direction: column
         margin: 0.5em auto 1.5em auto
         flex-basis: 45%
         @media(max-width: 768px)
           flex-basis: 85%
-
 
         &__title
           font-size: 1.5em
@@ -26,3 +28,4 @@
         &__description
           font-size: 16px
           text-align: justify
+          min-height: 4em

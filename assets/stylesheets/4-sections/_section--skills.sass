@@ -1,0 +1,72 @@
+// --- Section Skills ---
+
+.section
+
+  &--skills
+    background: $light-green-700
+
+    &__panels
+      width: 100%
+      display: flex
+      height: 12.5em
+      overflow: hidden
+      border-radius: 2px
+      box-shadow: $box-shadow
+      max-width: $max-width
+      width: 100%
+      margin: 0 auto
+
+
+      &__panel
+        width: 100%
+        flex: 1
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        cursor: pointer
+        transition: all 300ms ease-in-out
+        i, span
+          opacity: 0.87
+        &:hover
+          box-shadow: $box-shadow-hover
+          z-index: 2
+          i, span
+            opacity: 0.66
+        i
+          font-size: 4.5em
+          @media(max-width: $flex-break-point)
+            font-size: 3.5em
+        span
+          font-size: 1em
+          @media(max-width: $flex-break-point)
+            font-size: 0.8em
+
+        &--html
+          background-color: #e54d26
+
+        &--css
+          background-color: #0171bb
+
+        &--js
+          background-color: #f1da4e
+          .ion-social-javascript
+            color: #333
+
+        &--nodejs
+          background-color:#339933
+
+        &--sass
+          background-color: #cd669a
+
+        &--angular
+          background-color: #E52A3A
+
+        &--ionic
+          background-color: #4E8EF7
+
+        &--python
+          background-color: #3776ab
+
+        &--markdown
+          background-color: #0b0080

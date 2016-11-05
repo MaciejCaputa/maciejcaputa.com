@@ -1,16 +1,14 @@
-// This is the single file output by sass. It is intended to ONLY @import other files.
+// --- Main ---
 
-@import url('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css')
-
-// 1 - TOOLS
+// --- 1 - Tools ---
 @import '1-tools/bourbon/bourbon'
 @import '1-tools/fonts'
 @import '1-tools/normalize'
 @import '1-tools/material-design-colors'
 @import '1-tools/vars'
+@import '1-tools/ionic'
 
-// 2 - BASICS
+// --- 2 - Basics ---
 @import '2-basics/body-element'
 @import '2-basics/selection-colors'
 @import '2-basics/links'
@@ -18,16 +16,19 @@
 @import '2-basics/example-buttons'
 
 
-// 3 - Modules
+// --- 3 - Modules ---
 @import '3-modules/buttons'
-@import '3-modules/header'
-@import '3-modules/section-what-i-do-specialisation'
-@import '3-modules/section-portfolio'
 @import '3-modules/example-module-name-lockup'
 @import '3-modules/example-fork-tag'
 @import '3-modules/example-flex-video'
-@import '3-modules/section'
 
-// 4 - pages
-@import '4-pages/home'
-@import '4-pages/example-page-home'
+
+// --- 4 - Sections ---
+@import '4-sections/header'
+@import '4-sections/section'
+@import '4-sections/section--about'
+@import '4-sections/section--what-i-do-specialisation'
+@import '4-sections/section--services'
+@import '4-sections/section--portfolio'
+@import '4-sections/section--skills'
+@import '4-sections/section--contact'

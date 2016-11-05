@@ -11,17 +11,21 @@ var gulp        = require('gulp'),
     jade        = require('gulp-jade'),
     bourbon     = require('bourbon').includePaths;
 
+var insert = require('gulp-insert');
+
 
 gulp.task('sass', function() {
-  return gulp.src(['assets/stylesheets/*.sass'])
+  return gulp.src(['assets/stylesheets/main.sass'])
   .pipe(sass({
       includePaths: [bourbon],
       onError: browserSync.notify
   }).on('error', sass.logError))
   .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
   .pipe(cssmin())
-  .pipe(rename({suffix: '.min'}))
-  .pipe(gulp.dest('./_site/assets/stylesheets'));
+  .pipe(rename({basename: 'stylesheet', extname: ".jade"}))
+  .pipe(insert.prepend('style(amp-custom=\'\').\n\t'))
+  .pipe(gulp.dest('./assets/jadefiles'));
+
 });
 
 gulp.task('jade', function() {
@@ -48,11 +52,16 @@ gulp.task('images', function() {
 });
 
 gulp.task('pdf', function() {
-  return gulp.src(['assets/*.pdf'])
+  return gulp.src(['./assets/*.pdf'])
   .pipe(gulp.dest('./_site/assets'));
 });
 
-gulp.task('default', ['jade', 'sass', 'images', 'pdf'], function() {
+gulp.task('fonts', function() {
+  return gulp.src(['./assets/fonts/*'])
+  .pipe(gulp.dest('./_site/assets/fonts'));
+});
+
+gulp.task('default', ['jade', 'sass', 'pdf', 'images', 'fonts'], function() {
 
   browserSync({
     server: {
