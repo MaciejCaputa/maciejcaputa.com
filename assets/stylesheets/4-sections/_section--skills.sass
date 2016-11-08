@@ -3,16 +3,19 @@
 .section
 
   &--skills
-    background: $light-green-700
+    position: relative
+    background: $grey-300
+    padding: 0
+    border: none
+    // background: linear-gradient(to right,#e54d26 5.55% ,#0171bb 16.66%,#cd669a 27.77%,#f1da4e 38.88%,#339933 49.99%,#E52A3A 61.10%,#4E8EF7 72.21%,#3776ab 83.32%,#0b0080 94.43%)
 
     &__panels
       width: 100%
       display: flex
       height: 12.5em
       overflow: hidden
-      border-radius: 2px
       box-shadow: $box-shadow
-      max-width: $max-width
+      //max-width: $max-width
       width: 100%
       margin: 0 auto
 
@@ -43,30 +46,290 @@
             font-size: 0.8em
 
         &--html
-          background-color: #e54d26
+          background: #e54d26
 
         &--css
-          background-color: #0171bb
+          background: #0171bb
 
         &--js
-          background-color: #f1da4e
+          background: #f1da4e
           .ion-social-javascript
             color: #333
 
         &--nodejs
-          background-color:#339933
+          background:#339933
 
         &--sass
-          background-color: #cd669a
+          background: #cd669a
 
         &--angular
-          background-color: #E52A3A
+          background: #E52A3A
 
         &--ionic
-          background-color: #4E8EF7
+          background: #4E8EF7
 
         &--python
-          background-color: #3776ab
+          background: #3776ab
 
         &--markdown
-          background-color: #0b0080
+          background: #0b0080
+
+
+    &__projects
+      width: 100%
+      overflow: hidden
+      box-shadow: $box-shadow
+      //max-width: $max-width
+      width: 100%
+      margin: 0 auto
+      position: relative
+      &__skill
+        display: flex
+        //flex-direction: row
+        flex-wrap: wrap
+        align-items: center
+        justify-content: space-around
+        padding: 0.33em
+        width: 100%
+        // position: absolute
+        // top: 0
+        // left: 0
+        // top: -9999px
+        // left: -9999px
+        transition: all 300ms ease-in
+
+
+        &__project
+          //flex: auto
+          position: absolute
+          left: 0
+          top: 0
+          z-index: -1
+          width: auto
+          // transition: all 300ms ease-in
+          margin: 0.33em
+          text-align: center
+          &__title
+            text-align: center
+
+
+// --- Variables ---
+$mobile-width: 375px
+$mobile-height: 667px
+$tablet-width: 768px
+$tablet-height: 1024px
+$desktop-width: 1600px
+$desktop-height: 900px
+$scale: 0.33
+
+// --- General Styles ---
+
+body
+  display: flex
+  align-items: center
+  justify-content: space-around
+  flex-wrap: wrap
+  width: 100%
+  height: 100vh
+  background: #E0E0E0
+  padding: 1.5em 0
+
+iframe
+  width: 100%
+  height: 100%
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+
+
+.wrapper, .device
+  box-sizing: content-box
+
+.device
+  position: relative
+  transform: scale($scale)
+  //zoom: 0.5
+  transform-origin: left 0
+
+  &--mobile, &--tablet
+
+
+    &:after
+      content: ' '
+      position: absolute
+      left: 50%
+      bottom: -20px
+      width: 30px
+      height: 30px
+      transform: translate(-50%, 50%)
+      border: 2px solid #E0E0E0
+      border-radius: 50%
+      z-index: 2
+      background: #757575
+
+  &--mobile
+    width: $mobile-width
+    height: $mobile-height
+    border-top: 40px solid #424242
+    border-bottom: 40px solid #424242
+    border-left: 10px solid #424242
+    border-right: 10px solid #424242
+
+    &:before
+      content: ' '
+      position: absolute
+      left: 50%
+      top: -20px
+      width: 75px
+      height: 4px
+      transform: translate(-50%, -50%)
+      border: 2px solid #E0E0E0
+      border-radius: 10px
+      z-index: 2
+      background: #757575
+
+  &--tablet
+    width: $tablet-width
+    height: $tablet-height
+
+    border-top: 50px solid #424242
+    border-bottom: 50px solid #424242
+    border-left: 15px solid #424242
+    border-right: 15px solid #424242
+
+
+    &:after
+      bottom: -25px
+    &:before
+      content: ' '
+      position: absolute
+      left: 50%
+      top: -25px
+      width: 20px
+      height: 20px
+      transform: translate(-50%, -50%)
+      border: 2px solid #757575
+      border-radius: 50%
+      z-index: 2
+      background: #616161
+
+  &--desktop
+    width: 1600px
+    height: 900px
+
+    border-top: 50px solid #424242
+    border-bottom: 50px solid #424242
+    border-left: 20px solid #424242
+    border-right: 20px solid #424242
+
+    &:before, &:after
+      content: ' '
+      position: absolute
+      background: #424242
+      left: 50%
+      transform: translate(-50%)
+
+    &:before
+      width: 100px
+      height: 200px
+      top: 100%
+
+    &:after
+      width: 250px
+      height: 25px
+      top: calc(100% + 199px)
+
+.wrapper
+  margin: 2.5em auto
+  background: #3F51B5
+  &--mobile
+    width: ($mobile-width + 20) * $scale
+    height: ($mobile-height + 80) * $scale
+  &--mobile-width
+    width: ($mobile-width + 20) * $scale
+  &--tablet
+    width: ($tablet-width + 30) * $scale
+    height: ($tablet-height + 100) * $scale
+  &--tablet-width
+    width: ($tablet-width + 30) * $scale
+  &--desktop
+    width: ($desktop-width + 40) * $scale
+    height: ($desktop-height + 100) * $scale
+  &--desktop-width
+    width: ($desktop-width + 40) * $scale
+
+
+.section--skills__projects__skill
+
+  &--html5
+    background: #e54d26
+
+  &--css3
+    background: #0171bb
+
+  &--javascript
+    background: #f1da4e
+    .ion-social-javascript
+      color: #333
+
+  &--nodejs
+    background:#339933
+
+  &--sass
+    background: #cd669a
+
+  &--angularjs
+    background: #E52A3A
+
+  &--ionic
+    background: #4E8EF7
+
+  &--python
+    background: #3776ab
+
+  &--markdown
+    background: #0b0080
+
+
+input[type=radio]
+  display: none
+
+
+input#html5[type=radio]:checked ~ .section--skills__projects__skill
+  background: #e54d26
+
+input#css3[type=radio]:checked ~ .section--skills__projects__skill
+  background: #0171bb
+
+input#sass[type=radio]:checked ~ .section--skills__projects__skill
+  background: #cd669a
+
+input#javascript[type=radio]:checked ~ .section--skills__projects__skill
+  background: #f1da4e
+
+input#nodejs[type=radio]:checked ~ .section--skills__projects__skill
+  background:#339933
+
+input#angularjs[type=radio]:checked ~ .section--skills__projects__skill
+  background: #E52A3A
+
+input#ionic[type=radio]:checked ~ .section--skills__projects__skill
+  background: #4E8EF7
+
+input#python[type=radio]:checked ~ .section--skills__projects__skill
+  background: #3776ab
+
+input#markdown[type=radio]:checked ~ .section--skills__projects__skill
+  background: #0b0080
+
+
+
+input#html5[type=radio]:checked ~ .section--skills__projects__skill > .section--skills__projects__skill__project.html5,
+input#css3[type=radio]:checked ~ .section--skills__projects__skill > .section--skills__projects__skill__project.css3,
+input#sass[type=radio]:checked ~ .section--skills__projects__skill > .section--skills__projects__skill__project.sass,
+input#javascript[type=radio]:checked ~ .section--skills__projects__skill > .section--skills__projects__skill__project.javascript,
+input#nodejs[type=radio]:checked ~ .section--skills__projects__skill > .section--skills__projects__skill__project.nodejs,
+input#angularjs[type=radio]:checked ~ .section--skills__projects__skill > .section--skills__projects__skill__project.angularjs,
+input#ionic[type=radio]:checked ~ .section--skills__projects__skill > .section--skills__projects__skill__project.ionic,
+input#python[type=radio]:checked ~ .section--skills__projects__skill > .section--skills__projects__skill__project.python,
+input#markdown[type=radio]:checked ~ .section--skills__projects__skill > .section--skills__projects__skill__project.markdown
+  position: static
+  z-index: 1

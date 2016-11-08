@@ -19,6 +19,8 @@
     max-width: $max-width
     padding: 0 0.33em
     margin: 0 auto
+    @media(max-width: 480px)
+      padding: 0 0.33em
 
     &__logo
       position: relative
@@ -34,6 +36,10 @@
       padding: 0
           margin: 0
 
+      @media(max-width: 480px)
+        width: 60px
+        height: auto
+
     &__links
       display: flex
 
@@ -42,6 +48,8 @@
         font-size: 1.2em
         padding: 0 0.5em
         color: rgba(0,0,0,0.87)
+        @media(max-width: 480px)
+          padding: 0.33em
 
         i
           color: rgba(0,0,0,0.87)
