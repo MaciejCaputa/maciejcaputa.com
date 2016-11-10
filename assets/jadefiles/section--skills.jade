@@ -50,31 +50,31 @@ section.section.section--skills
         'desciption': 'Innovative trading app.',
         'skills': 'html5 css3 sass javascript angularjs ionic'
       },
-      'A Strong Call To Action Landing Page': {
+      'CTA Landing Page': {
         'id': 'EyVRzQ',
-        'device': 'desktop',
-        'desciption': 'This landing page provides immersive experience and is highly persuasive. It is just impossible to NOT register if once you entered the website.',
+        //desktop
+        'device': 'mobile',
+        'desciption': 'Intuitively persuasive.',
+        //- 'desciption': 'This landing page provides immersive experience and is highly persuasive. It is just impossible to NOT register if once you entered the website.',
         'skills': 'html5 css3 sass javascript'
-      },
-      'Stock Quotes': {
-        'id': 'QKgqAa',
-        'device': 'tablet',
-        'desciption': 'Main purpose of the Stock Quotes web app is to provide reliable both real-time and historic quotes of companies that composite indexes such as FTSE 100 for UK and NASDAQ 100 for USA.',
-        'skills': 'html5 css3 sass javascript angularjs'
       },
       'Keep on Coding': {
         'id': 'pbgbjR',
-        'device': 'desktop',
-        'desciption': 'Keep On Coding a motivational motto for fellow codepeners.',
+        // Desktop
+        'device': 'mobile',
+        'desciption': 'The CodePerners motto.',
+        //- 'desciption': 'Keep On Coding a motivational motto for fellow codepeners.',
         'skills': 'html5 css3 sass javascript'
       },
-      'Glacier Expedition Landing Page': {
+      'Glacier Expedition': {
         'id': 'JKGRWo',
-        'device': 'desktop',
-        'desciption': 'Totally professional responsive and modernly designed landing page for a company that specialise in providing adventure trips to glacier.',
+        // Desktop
+        'device': 'mobile',
+        'desciption': 'Adventure of your lifetime.',
+        //- 'desciption': 'Totally professional responsive and modernly designed landing page for a company that specialise in providing adventure trips to glacier.',
         'skills': 'html5 css3 sass'
       },
-      'Responsive and Animated Pie Charts': {
+      'Pie Charts': {
         'id': 'VjVpRZ',
         'device': 'mobile',
         'desciption': 'Cool and animated.',
@@ -82,20 +82,21 @@ section.section.section--skills
       },
       'AI Path Finding': {
         'id': 'rrkPXA',
-        'device': 'tablet',
-        'desciption': 'Optimal path finding based on genetic algorithm!',
+        //tablet
+        'device': 'mobile',
+        'desciption': 'Optimal path finding with genetic algorithm!',
         'skills': 'html5 css3 sass javascript'
       },
       'News Feed': {
         'id': 'PGJPmm',
-        'device': 'desktop',
+        'device': 'mobile',
         'desciption': 'All news sources in one place.',
         'skills': 'html5 css3 sass javascript angularjs'
       },
       'Scrooge': {
         'id': '6ea2d80268f135d57fd74e4c27ae5d0d',
         'device': 'mobile',
-        'desciption': 'Clicky app available on iOs and android.',
+        'desciption': 'Clicky app available on iOS and android.',
         'skills': 'html5 css3 sass javascript angularjs ionic'
       }
     };
@@ -103,7 +104,7 @@ section.section.section--skills
     var heights = {
       'mobile': 667,
       'tablet': 1024,
-      'desktop': 900
+      'desktop': 768
     };
     
   .section--skills__projects
@@ -128,17 +129,4 @@ section.section.section--skills
             
               amp-iframe.section--skills__projects__skill__project__iframe(sandbox='allow-scripts allow-same-origin', height='#{heights[project.device]}', src='https://codepen.io/MaciejCaputa/embed/#{project.id}/?height=#{heights[project.device]}&theme-id=26236&default-tab=result&embed-version=2', scrolling='no', frameborder='0', allowtransparency, allowfullscreen)
               
-              //- img(src='https://codepen.io/MaciejCaputa/pen/#{project.id}/image/large.png&height=1000')
-
-    //-           p.codepen(data-height='#{heights[project.device]}', data-theme-id='26236', data-slug-hash='#{project.id}', data-default-tab='result', data-user='MaciejCaputa', data-embed-version='2', data-pen-title='#{title}')
-    //-             | See the Pen 
-    //-             a(href='https://codepen.io/MaciejCaputa/pen/#{project.id}/') #{title}
-    //-             |  by Maciej Caputa (
-    //-             a(href='http://codepen.io/MaciejCaputa') @MaciejCaputa
-    //-             | ) on 
-    //-             a(href='http://codepen.io') CodePen
-    //-             | .
-    //- 
-    //- 
-    //-   
-    //- script(async='', src='https://production-assets.codepen.io/assets/embed/ei.js')
+              

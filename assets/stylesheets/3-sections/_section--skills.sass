@@ -1,5 +1,15 @@
 // --- Section Skills ---
 
+
+// --- Variables ---
+$mobile-width: 375px
+$mobile-height: 667px
+$tablet-width: 768px
+$tablet-height: 1024px
+$desktop-width: 1366px
+$desktop-height: 768px
+$scale: 0.66
+
 .section
 
   &--skills
@@ -7,15 +17,13 @@
     background: $grey-300
     padding: 0
     border: none
-    // background: linear-gradient(to right,#e54d26 5.55% ,#0171bb 16.66%,#cd669a 27.77%,#f1da4e 38.88%,#339933 49.99%,#E52A3A 61.10%,#4E8EF7 72.21%,#3776ab 83.32%,#0b0080 94.43%)
-
+    min-height: 0
     &__panels
       width: 100%
       display: flex
       height: 12.5em
       overflow: hidden
       box-shadow: $box-shadow
-      //max-width: $max-width
       width: 100%
       margin: 0 auto
 
@@ -28,7 +36,6 @@
         justify-content: center
         flex-direction: column
         cursor: pointer
-        transition: all 300ms ease-in-out
         i, span
           opacity: 0.87
         &:hover
@@ -79,36 +86,30 @@
       width: 100%
       overflow: hidden
       box-shadow: $box-shadow
-      //max-width: $max-width
       width: 100%
       margin: 0 auto
       position: relative
       &__skill
         display: flex
-        //flex-direction: row
         flex-wrap: wrap
         align-items: center
         justify-content: space-around
         padding: 0.33em
         width: 100%
-        // position: absolute
-        // top: 0
-        // left: 0
-        // top: -9999px
-        // left: -9999px
-        transition: all 300ms ease-in
-
 
         &__project
-          //flex: auto
+          display: flex
+          flex-direction: column
+          align-items: center
+          justify-content: space-between
           position: absolute
           left: 0
           top: 0
           z-index: -1
           width: auto
-          // transition: all 300ms ease-in
-          margin: 0.33em
+          margin: 1em 0.33em
           text-align: center
+          min-height: $mobile-height * $scale + 130px
 
           img
             position: absolute
@@ -118,43 +119,48 @@
             height: auto
           &__title
             text-align: center
+            margin: 0 auto
+            padding: 0
+          &__desciption
+            margin: 0 auto
+            padding: 0
+          .wrapper
+            margin: 0 auto
 
 
-// --- Variables ---
-$mobile-width: 375px
-$mobile-height: 667px
-$tablet-width: 768px
-$tablet-height: 1024px
-$desktop-width: 1600px
-$desktop-height: 900px
-$scale: 0.33
+
+
+
+
+
+
+
+
+
+
+
+
 
 // --- General Styles ---
-
-body
-  display: flex
-  align-items: center
-  justify-content: space-around
-  flex-wrap: wrap
-  width: 100%
-  height: 100vh
-  background: #E0E0E0
-  padding: 1.5em 0
 
 amp-iframe
   width: 100%
   height: 100%
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
 
-
 .wrapper, .device
   box-sizing: content-box
+  position: relative
+
 
 .device
-  position: relative
+
   transform: scale($scale)
-  //zoom: 0.5
-  transform-origin: left 0
+  transform-origin: left top 0
+
+  // Works!!!
+  //transform-origin: center top 0
+  // -webkit-transform-style: preserve-3d
 
   &--mobile, &--tablet
 
@@ -219,8 +225,8 @@ amp-iframe
       background: #616161
 
   &--desktop
-    width: 1600px
-    height: 900px
+    width: $desktop-width
+    height: $desktop-height
 
     border-top: 50px solid #424242
     border-bottom: 50px solid #424242
@@ -263,42 +269,8 @@ amp-iframe
   &--desktop-width
     width: ($desktop-width + 40) * $scale
 
-
-.section--skills__projects__skill
-
-  &--html5
-    background: #e54d26
-
-  &--css3
-    background: #0171bb
-
-  &--javascript
-    background: #f1da4e
-    .ion-social-javascript
-      color: #333
-
-  &--nodejs
-    background:#339933
-
-  &--sass
-    background: #cd669a
-
-  &--angularjs
-    background: #E52A3A
-
-  &--ionic
-    background: #4E8EF7
-
-  &--python
-    background: #3776ab
-
-  &--markdown
-    background: #0b0080
-
-
 input[type=radio]
   display: none
-
 
 input#html5[type=radio]:checked ~ .section--skills__projects__skill
   background: #e54d26
@@ -326,8 +298,6 @@ input#python[type=radio]:checked ~ .section--skills__projects__skill
 
 input#markdown[type=radio]:checked ~ .section--skills__projects__skill
   background: #0b0080
-
-
 
 input#html5[type=radio]:checked ~ .section--skills__projects__skill > .section--skills__projects__skill__project.html5,
 input#css3[type=radio]:checked ~ .section--skills__projects__skill > .section--skills__projects__skill__project.css3,

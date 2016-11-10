@@ -1,5 +1,9 @@
 AddType 'text/html; charset=UTF-8' html
-ErrorDocument 404 http://matematika.pl
+ErrorDocument 404 http://maciejcaputa.com
+
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://maciejcaputa.com/$1 [R,L]
 
 <IfModule mod_filter.c>
     AddOutputFilterByType DEFLATE "application/atom+xml" \
