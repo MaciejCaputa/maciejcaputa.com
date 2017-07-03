@@ -121,12 +121,12 @@ section.section.section--skills
   
     .section--skills__projects__skill
       each project, title in projects
-        .section--skills__projects__skill__project(class='#{project.skills} wrapper--#{project.device}-width')
+        .section--skills__projects__skill__project(class=`${project.skills} wrapper--${project.device}-width`)
           h3.section--skills__projects__skill__project__title= title
           p.section--skills__projects__skill__project__desciption= project.desciption
-          .wrapper(class='wrapper--#{project.device}')
-            .device(class='device--#{project.device}')
+          .wrapper(class=`wrapper--${project.device}`)
+            .device(class=`device--${project.device}`)
             
-              amp-iframe.section--skills__projects__skill__project__iframe(sandbox='allow-scripts allow-same-origin', height='#{heights[project.device]}', src='https://codepen.io/MaciejCaputa/embed/#{project.id}/?height=#{heights[project.device]}&theme-id=26236&default-tab=result&embed-version=2', scrolling='no', frameborder='0', allowtransparency, allowfullscreen)
+              amp-iframe.section--skills__projects__skill__project__iframe(sandbox='allow-scripts allow-same-origin', height=`${heights[project.device]}`, src=`https://codepen.io/MaciejCaputa/embed/${project.id}/?height=${heights[project.device]}&theme-id=26236&default-tab=result&embed-version=2`, scrolling='no', frameborder='0', allowtransparency, allowfullscreen)
               
               

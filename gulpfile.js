@@ -28,7 +28,7 @@ gulp.task('sass', function() {
 gulp.task('pug', function() {
   return gulp.src('index.pug')
   .pipe(pug())
-  .pipe(gulp.dest('./_site'));
+  .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('js', function() {
@@ -40,29 +40,29 @@ gulp.task('js', function() {
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
     .pipe(gulp.dest('js'))
-    .pipe(gulp.dest('_site/js'));
+    .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('images', function() {
   return gulp.src(['assets/images/*'])
-  .pipe(gulp.dest('./_site/assets/images'));
+  .pipe(gulp.dest('./dist/assets/images'));
 });
 
 gulp.task('pdf', function() {
   return gulp.src(['./assets/*.pdf'])
-  .pipe(gulp.dest('./_site/assets'));
+  .pipe(gulp.dest('./dist/assets'));
 });
 
 gulp.task('fonts', function() {
   return gulp.src(['./assets/fonts/*'])
-  .pipe(gulp.dest('./_site/assets/fonts'));
+  .pipe(gulp.dest('./dist/assets/fonts'));
 });
 
 gulp.task('default', ['pug', 'sass', 'pdf', 'images', 'fonts'], function() {
 
   browserSync({
     server: {
-      baseDir: './_site'
+      baseDir: './dist'
     }
   })
 
