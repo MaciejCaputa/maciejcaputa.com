@@ -1,17 +1,14 @@
-var gulp        = require('gulp'),
-    browserSync = require('browser-sync'),
-    sass        = require('gulp-sass'),
-    prefix      = require('gulp-autoprefixer'),
-    cssmin      = require('gulp-cssmin'),
-    jshint      = require('gulp-jshint'),
-    concat      = require('gulp-concat'),
-    uglify      = require('gulp-uglify'),
-    rename      = require('gulp-rename'),
-    cp          = require('child_process'),
-    jade        = require('gulp-jade'),
-    bourbon     = require('bourbon').includePaths;
-
-var insert = require('gulp-insert');
+const gulp = require('gulp');
+const browserSync = require('browser-sync');
+const sass = require('gulp-sass');
+const prefix = require('gulp-autoprefixer');
+const cssmin = require('gulp-cssmin');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
+const pug = require('gulp-pug');
+const bourbon = require('bourbon').includePaths;
+const insert = require('gulp-insert');
 
 
 gulp.task('sass', function() {
@@ -22,15 +19,15 @@ gulp.task('sass', function() {
   }).on('error', sass.logError))
   .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
   .pipe(cssmin())
-  .pipe(rename({basename: 'stylesheet', extname: ".jade"}))
+  .pipe(rename({basename: 'stylesheet', extname: ".pug"}))
   .pipe(insert.prepend('style(amp-custom=\'\').\n\t'))
-  .pipe(gulp.dest('./assets/jadefiles'));
+  .pipe(gulp.dest('./assets/pugfiles'));
 
 });
 
-gulp.task('jade', function() {
-  return gulp.src('index.jade')
-  .pipe(jade())
+gulp.task('pug', function() {
+  return gulp.src('index.pug')
+  .pipe(pug())
   .pipe(gulp.dest('./_site'));
 });
 
@@ -61,7 +58,7 @@ gulp.task('fonts', function() {
   .pipe(gulp.dest('./_site/assets/fonts'));
 });
 
-gulp.task('default', ['jade', 'sass', 'pdf', 'images', 'fonts'], function() {
+gulp.task('default', ['pug', 'sass', 'pdf', 'images', 'fonts'], function() {
 
   browserSync({
     server: {
@@ -70,7 +67,7 @@ gulp.task('default', ['jade', 'sass', 'pdf', 'images', 'fonts'], function() {
   })
 
   gulp.watch('assets/javascript/**/*.js',                 ['js']);
-  gulp.watch('assets/stylesheets/**',                     ['sass']);
-  gulp.watch(['assets/jadefiles/*.jade', 'index.jade'],   ['jade']);
+  gulp.watch('assets/stylesheets/**/*.sass',                     ['sass']);
+  gulp.watch(['assets/pugfiles/*.pug', 'index.pug'],   ['pug']);
 
 });

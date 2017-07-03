@@ -5,7 +5,10 @@ RewriteEngine On
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://maciejcaputa.com/$1 [R,L]
 
+Header set Access-Control-Allow-Origin "*"
+
 <IfModule mod_filter.c>
+
     AddOutputFilterByType DEFLATE "application/atom+xml" \
                                   "application/javascript" \
                                   "application/json" \

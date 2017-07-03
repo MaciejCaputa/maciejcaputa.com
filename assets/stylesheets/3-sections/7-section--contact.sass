@@ -1,0 +1,105 @@
+// --- Section Conctact ---
+
+.section
+
+  &--contact
+    background: $pink-700
+    padding-bottom: 2.5em
+
+    &__form
+      &__input + &__input
+        margin-top: 1.5em
+      &__input
+        input
+          line-height: 1.5em
+        input, textarea
+          color: $grey-800
+          box-shadow: $box-shadow
+          outline: none
+          border-radius: 2px
+          resize: none
+          border: none
+
+
+      &__submit
+        margin-top: 1.5em
+        border: none
+        margin-bottom: 1em
+        border-radius: 2px
+        box-shadow: $box-shadow
+        background: $grey-800
+        color: $grey-300
+        width: 4em
+        transition: all 300ms ease-in-out
+        line-height: 2em
+        &:hover
+          box-shadow: $box-shadow-hover
+        &:active
+          background: $grey-600
+          cursor: pointer
+
+    &__social-media
+      display: flex
+      flex-direction: row
+      justify-content: center
+      font-size: 4.5em
+
+      &__button
+        color: $grey-50
+        background: $pink-600
+        border-radius: 4px
+        text-align: center
+        text-decoration: none
+        font-family: fontawesome
+        position: relative
+        display: inline-block
+        width: 100px
+        height: 100px
+        line-height: 1
+        padding: 15px
+        margin: 0.2em
+        transition: all .5s
+        box-shadow: $box-shadow
+
+        &:hover
+          color: $grey-50
+          background: $pink-400
+          box-shadow: $box-shadow-hover
+          /* text pops up when icon is in hover state */
+          span
+            visibility: visible
+            opacity: 1
+
+
+        span
+          color: $grey-300
+          background: $grey-800
+          position: absolute
+          font-family: sans-serif
+
+          padding: 0.33em
+          //z-index: -1
+          font-size: 0.2em
+          border-radius: 2px
+
+          visibility: hidden
+          opacity: 0
+          top: calc(100% + 0.9em)
+          left: 50%
+          transform: translateX(-50%)
+          line-height: 2em
+          transition: all 300ms ease-in-out
+          box-shadow: $box-shadow-hover
+
+          &:before
+            content: ''
+            width: 0
+            height: 0
+            border-left: 5px solid transparent
+            border-right: 5px solid transparent
+            border-top: 5px solid #fff
+            position: absolute
+            bottom: calc(100% + 0.2em)
+            left: 50%
+            transform: translateX(-50%)
+            box-shadow: $box-shadow-hover
